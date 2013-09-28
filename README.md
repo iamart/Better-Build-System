@@ -16,7 +16,7 @@ Details:
 Commands:
 ---------
 #### Use commands to disable specific features
-```json
+```javascript
 // Shows panel only if build is unsuccessful. Set to false to disable this feature.
 "show_panel_on_failed_build_only": true,
 // Doesn't show debug text if compiler return exit code other than 0. Set to false to disable this feature.
