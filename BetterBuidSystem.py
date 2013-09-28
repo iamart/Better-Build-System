@@ -229,6 +229,8 @@ class ExecCommand(sublime_plugin.WindowCommand, ProcessListener):
         self.append_data(proc, str.encode(self.encoding))
 
     def finish(self, proc):
+        show_panel_on_build             = sublime.load_settings("Preferences.sublime-settings").get("show_panel_on_build", True)
+        show_panel_on_failed_build_only = sublime.load_settings("Preferences.sublime-settings").get("show_panel_on_failed_build_only", True)
         if not self.quiet:
             elapsed = time.time() - proc.start_time
             exit_code = proc.exit_code()
@@ -241,12 +243,11 @@ class ExecCommand(sublime_plugin.WindowCommand, ProcessListener):
                 show_debug_text = sublime.load_settings("Preferences.sublime-settings").get("show_debug_text", False)
                 if show_debug_text:
                     self.append_string(proc, self.debug_text)
+                if show_panel_on_failed_build_only:
+                    self.window.run_command("show_panel", {"panel": "output.exec"})
 
         if proc != self.proc:
             return
-
-        show_panel_on_build = sublime.load_settings("Preferences.sublime-settings").get("show_panel_on_build", True)
-        show_panel_on_failed_build_only = sublime.load_settings("Preferences.sublime-settings").get("show_panel_on_failed_build_only", True)
 
         if show_panel_on_build and not show_panel_on_failed_build_only:
              self.window.run_command("show_panel", {"panel": "output.exec"})
@@ -256,8 +257,6 @@ class ExecCommand(sublime_plugin.WindowCommand, ProcessListener):
             sublime.status_message("Build finished")
         else:
             sublime.status_message(("Build finished with %d errors") % len(errs))
-            if show_panel_on_failed_build_only:
-                self.window.run_command("show_panel", {"panel": "output.exec"})
 
     def on_data(self, proc, data):
         sublime.set_timeout(functools.partial(self.append_data, proc, data), 0)
