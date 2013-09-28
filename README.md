@@ -1,7 +1,7 @@
 Better Build System
 ===================
 
-Better Build System rewrites standard build command with few new improvements.
+Better Build System rewrites is an edited standard build system with few enhancements.
 
 Features:
 ---------
@@ -20,7 +20,9 @@ Commands:
 // Results can be shown via the Tools/Build Results menu.
 "show_panel_on_build": true
 ```
-
+TO DO:
+------
+Let me know if you want to see something else.
 License
 ----
 [![Creative Commons License](http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png "Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License")](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US)
