@@ -5,13 +5,8 @@ Better Build System is an edited standard build system with few enhancements.
 
 Features:
 ---------
-  - Doesn't show build panel on successful build
-  - Doesn't show debug text on exit codes
-
-Details:
---------
-1. Instead of showing build panel plugin will print "Build finished" on status bar if no errors or warnings were found during building (if compiler returns exit code 0).
-2. Doesn't show debug text if compiler return exit code other than 0. Debug text is a text sublime shows on failure, e.g. [cmd: ...], [dir: ...], [path: ...].
+  - **Doesn't show build panel on successful build.** Instead of showing build panel plugin will print "Build finished" on status bar if no errors or warnings were found during building (if compiler returns exit code 0).
+  - **Doesn't show debug text on exit codes.** Doesn't show debug text if compiler return exit code other than 0. Debug text is a text sublime shows on failure, e.g. [cmd: ...], [dir: ...], [path: ...].
 
 Commands:
 ---------
