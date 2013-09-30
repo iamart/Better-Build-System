@@ -24,7 +24,7 @@ Commands:
 
 TO DO:
 ------
-Leave a feature in issues if you want to see something else.
+Leave a feature on issues page if you want to see something else.
 
 Change log:
 -----------
