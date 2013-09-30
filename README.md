@@ -24,7 +24,7 @@ Commands:
 
 TO DO:
 ------
-Let me know if you want to see something else.
+Leave a feature in issues if you want to see something else.
 
 Change log:
 -----------
